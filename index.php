@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$HOST = 'aws.connect.psdb.cloud';
-$USERNAME = '7tju9dd621h3sup78k4h';
-$PASSWORD = 'pscale_pw_MUmvKr1L8Se76ooq5nH2DruwwgCV0aRYlrSguhA9RpI';
-$DATABASE = 'classlink_authentification';
+$HOST = 'containers-us-west-30.railway.app';
+$USERNAME = 'root';
+$PASSWORD = 'OZhRX1y7jFk2m5OxBDIg'
+$DATABASE = 'railway';
 $method = filter_input(INPUT_SERVER,'REQUEST_METHOD');
 $dsn = "mysql://root:OZhRX1y7jFk2m5OxBDIg@containers-us-west-30.railway.app:6523/railway";
 try {
-    $pdo = new PDO($dsn, $username, $password);
+    $pdo = new PDO($dsn, $USERNAME, $PASSWORD);
     // Configurez les options PDO si nécessaire
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Utilisez la connexion PDO pour exécuter des requêtes SQL
