@@ -5,7 +5,7 @@ $USERNAME = 'root';
 $PASSWORD = 'OZhRX1y7jFk2m5OxBDIg';
 $DATABASE = 'railway';
 $method = filter_input(INPUT_SERVER,'REQUEST_METHOD');
-$dsn = "mysql:host={$HOST};dbname={$DATABASE}";
+$dsn = "mysql://root:OZhRX1y7jFk2m5OxBDIg@containers-us-west-30.railway.app:6523/railway";
 $options = array(
 PDO::MYSQL_ATTR_SSL_CA => "./cacert-2023-01-10.pem",
 );
