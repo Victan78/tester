@@ -23,7 +23,9 @@ if($method == 'POST'){
                 ":password" => password_hash($password, PASSWORD_DEFAULT),
             ]);
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
