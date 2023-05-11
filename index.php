@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $HOST = 'containers-us-west-30.railway.app';
 $USERNAME = 'root';
 $PASSWORD = 'OZhRX1y7jFk2m5OxBDIg';
