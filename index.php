@@ -1,4 +1,28 @@
+<?php
+session_start();
 
+$HOST = 'containers-us-west-30.railway.app';
+$USERNAME = 'root';
+$PASSWORD = 'OZhRX1y7jFk2m5OxBDIg';
+$DATABASE = 'railway';
+$method = filter_input(INPUT_SERVER,'REQUEST_METHOD');
+$dsn = "mysql:host={$HOST};dbname={$DATABASE}";
+$options = array(
+PDO::MYSQL_ATTR_SSL_CA => "./cacert-2023-01-10.pem",
+);
+$pdo = new PDO($dsn, $USERNAME, $PASSWORD, $options);
+
+if($method == 'POST'){
+    $username = trim(filter_input(INPUT_POST, 'username'));
+    $password = trim(filter_input(INPUT_POST, 'password'));
+    $requete = $pdo->prepare("
+            INSERT INTO users (login, password) VALUES (:login, :password)
+            ");
+            $requete->execute([
+                ":login" => $username,
+                ":password" => password_hash($password, PASSWORD_DEFAULT),
+            ]);
+}
 
 <!DOCTYPE html>
 <html lang="fr">
